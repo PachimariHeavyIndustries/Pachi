@@ -8,10 +8,10 @@ function wiki(client, evt, suffix, lang) {
   if (!suffix) return Promise.resolve(T('wiki_usage', lang));
 
   return new Promise(resolve => {
-    Wiki().search(suffix, 1).then(data => {
-      Wiki().page(data.results[0]).then(page => {
+    new Wiki().search(suffix, 1).then(data => {
+      new Wiki().page(data.results[0]).then(page => {
         page.summary().then(summary => {
-          resolve(`${summary.substring(0, 1900)}...\n\n<${page.raw.fullurl}>`);
+          resolve(summary.toString().split('\n'));
         });
       })
       .catch(() => {
@@ -27,5 +27,5 @@ export default {
 };
 
 export const help = {
-  wiki: {parameters: 'search terms'}
+  wiki: {parameters: ['search terms']}
 };

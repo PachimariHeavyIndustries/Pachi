@@ -22,24 +22,17 @@ const positions = {
   off: 'off',
   offlane: 'off',
   'off lane': 'off',
-  carry: 'safe',
   safe: 'safe',
   safelane: 'safe',
   'safe lane': 'safe',
   jungle: 'jungle',
-  jungler: 'jungle',
-  jg: 'jungle',
-  roaming: 'roaming',
-  roam: 'roaming',
-  support: 'roaming',
-  sup: 'roaming',
-  supp: 'roaming'
+  jg: 'jungle'
 };
 
 function best(suffix) {
   const position = suffix.replace('best', '').toLowerCase().trim();
   const db_position = positions[position];
-  if (!db_position) return Promise.resolve(`I don't understand position **${position}**. Did you mean **Middle**, **Offlane**, **Safelane**, **Jungle**, or **Roaming**?`);
+  if (!db_position) return Promise.resolve(`I don't understand position **${position}**. Did you mean **mid**, **off**, **safe**, or **jungle**?`);
 
   const options = {
     url: `http://www.dotabuff.com/heroes/lanes?lane=${db_position}`,
@@ -246,25 +239,25 @@ export const help = {
   dota2: {
     header_text: 'dota2_header_text',
     static_texts: {
-      dota_positions: '**Middle**, **Offlane**, **Safelane**, **Jungle**, and **Roaming**'
+      dota_positions: '**Mid**, **Off**, **Safe**, and **Jungle**'
     },
     subcommands: [
       {
         name: 'best',
-        parameters: 'position'
+        parameters: ['position']
       },
       {
         name: 'build',
-        parameters: 'hero-name'
+        parameters: ['hero-nane']
       },
       {
         name: 'counters',
-        parameters: 'hero-name'
+        parameters: ['hero-name']
       },
       {name: 'impact'},
       {
         name: 'items',
-        parameters: 'hero-name'
+        parameters: ['hero-name']
       }
     ]
   }

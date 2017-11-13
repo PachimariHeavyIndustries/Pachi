@@ -55,14 +55,13 @@ describe('info', () => {
         }
       };
       return info.channelinfo({}, evt)
-      .then(res => res[0].should.equal(`\`\`\`ruby
-Server: server
+      .then(res => res[0].should.equal(`\`\`\`Server: server
 Name: test
 ID: 1234
 Type: 0
 Position: 2
-New_Messages: 1 (since the bot was restarted)
-Created: Wed, 12 Aug 2015 14:11:00 GMT
+New Messages: 1 (since the bot was restarted)
+Created At: Wed Aug 12 2015 17:11:00 GMT+0300 (EEST)
 Topic: abc
 \`\`\``));
     });
@@ -91,14 +90,13 @@ Topic: abc
         }
       };
       return info.channelinfo({}, evt, '<#9876543210>')
-      .then(res => res[0].should.equal(`\`\`\`ruby
-Server: server
+      .then(res => res[0].should.equal(`\`\`\`Server: server
 Name: test
 ID: 9876543210
 Type: 0
 Position: 2
-New_Messages: 1 (since the bot was restarted)
-Created: Wed, 12 Aug 2015 14:11:00 GMT
+New Messages: 1 (since the bot was restarted)
+Created At: Wed Aug 12 2015 17:11:00 GMT+0300 (EEST)
 Topic: abc
 \`\`\``));
     });
@@ -130,25 +128,22 @@ Topic: abc
             afk_timeout: '3600',
             members: ['user'],
             createdAt: 'Wed Aug 12 2015 17:11:00 GMT+0300 (EEST)',
-            emojis: [{name: 'emoji1'}, {name: 'emoji2'}],
             roles: [{name: '@everyone'}, {name: 'role1'}, {name: 'role2'}],
             iconURL: 'http://website.com/img.png'
           }
         }
       };
       return info.serverinfo({}, evt)
-      .then(res => res[0].should.equal(`\`\`\`ruby
-Name: test
+      .then(res => res[0].should.equal(`\`\`\`Name: test
 ID: 1234
 Region: london
 Owner: user
 Channels: 1 (1 text & 1 voice)
-Default_Channel: general
-AFK_Channel: afk
-AFK_Timeout: 60 minutes
+Default Channel: general
+AFK Channel: afk
+AFK Timeout: 60 minutes
 Members: 1
-Created: Wed, 12 Aug 2015 14:11:00 GMT
-Emojis: emoji1, emoji2
+Created At: Wed Aug 12 2015 17:11:00 GMT+0300 (EEST)
 Roles: role1, role2
 Icon: \`\`\`http://website.com/img.png`));
     });
@@ -175,12 +170,11 @@ Icon: \`\`\`http://website.com/img.png`));
         }
       };
       return info.userinfo({}, evt)
-      .then(res => res[0].should.equal(`\`\`\`ruby
-Name: user
+      .then(res => res[0].should.equal(`\`\`\`Name: user
 ID: 1
 Discriminator: 1234
 Status: online (Playing game)
-Registered: Wed, 12 Aug 2015 14:11:00 GMT
+Registered At: Wed Aug 12 2015 17:11:00 GMT+0300 (EEST)
 Avatar: \`\`\`http://website.com/img.png`));
     });
 
@@ -202,12 +196,11 @@ Avatar: \`\`\`http://website.com/img.png`));
         }
       };
       return info.userinfo({}, evt, 'user')
-      .then(res => res[0].should.equal(`\`\`\`ruby
-Name: user
+      .then(res => res[0].should.equal(`\`\`\`Name: user
 ID: 1
 Discriminator: 1234
 Status: online (Playing game)
-Registered: Wed, 12 Aug 2015 14:11:00 GMT
+Registered At: Wed Aug 12 2015 17:11:00 GMT+0300 (EEST)
 Avatar: \`\`\`http://website.com/img.png`));
     });
   });

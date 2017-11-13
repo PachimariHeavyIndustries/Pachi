@@ -8,7 +8,7 @@ function unshorten(client, evt, suffix, lang) {
   if (!suffix) return Promise.resolve(T('unshorten_usage', lang));
   return uu.expandAsync(suffix)
     .then(url => {
-      if (!url) return T('unshorten_response', lang);
+      if (!url) return 'This url can\'t be expanded.';
       return `<${url}>`;
     });
 }

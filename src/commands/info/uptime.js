@@ -32,10 +32,5 @@ ${uptimem} Minutes
 ${uptimes} Seconds`);
 }
 
-export default {
-  uptime
-};
-
-export const help = {
-  uptime: {}
-};
+export const help = {uptime: {}};
+export default { uptime };
