@@ -1,11 +1,18 @@
+/*the deleted chat function of gravebot that was turned into .bak file, i reckon
+we can try using this to see if pancakes (our local bot) will talk again*/
 import Promise from 'bluebird';
 import Cleverbot from 'cleverbot-node';
 import ent from 'entities';
+import nconf from 'nconf';
 
+import T from '../../translate';
 
+//the thing is the one that we had earlier didn't take the API key at all... 
 const clever = new Cleverbot();
+clever.configure({botapi: nconf.get('CLEVERBOT_KEY')});
 
 function chat(client, evt, suffix, lang) {
+  if (!nconf.get('CLEVERBOT_KEY')) return Promise.resolve(T('chat_setup', lang));
   if (!suffix) suffix = 'Hello.';
   evt.message.channel.sendTyping();
   return new Promise((resolve, reject) => {
@@ -32,7 +39,5 @@ export default {
 };
 
 export const help = {
-  chat: {
-    parameters: ['text']
-  }
+  chat: {parameters: 'text'}
 };
