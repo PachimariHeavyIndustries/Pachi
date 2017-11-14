@@ -89,6 +89,11 @@ function callCmd(cmd, name, client, evt, suffix) {
 function onMessage(evt) {
   if (!evt.message) return;
   if (client.User.id === evt.message.author.id) return;
+  // if (evt.message.content == "F"){
+    //evt.message.channel.sendMessage(`Paying respect! :eggplant:`
+  //  evt.message.channel.sendMessage(upload: 'https://i.imgur.com/9bC1UNC.jpg');
+  //  return;
+  //}
 
   // Checks for PREFIX
   if (evt.message.content[0] === nconf.get('PREFIX')) {
