@@ -48,6 +48,11 @@ For self hosting, click [here](#localconfig).
 - `!leet` *sentence* - 1337ifies the sentence
 - `!snoop` *sentence* - Snoopifies tha sentence
 - `!yoda` *sentence* - Yodaifies the sentence
+- `!no` - Returns a random "No" Image
+- `!yes` - Same thing, but for "Yes"
+- `!sad` - Yep, but for "Sad"
+- `!lego` - You won't get this one. It won't make sense to you
+- `!dontgo` - Returns a form of the "It's dangerous to go alone" meme image
 
 #### Useful:
 - `!ddg` *search terms* - Search the web, can also calculate and convert. Search other websites by appending its shortening (e.g. `!ddg !yt Hello`) See <https://duckduckgo.com/bang> for a list.
