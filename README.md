@@ -1,26 +1,16 @@
-# Gravebot
+# Pachi
 
-[![Build Status](https://david-dm.org/gravebot/gravebot.svg)](https://david-dm.org/gravebot/gravebot)
-[![Build Status](https://travis-ci.org/Gravebot/Gravebot.svg?branch=master)](https://travis-ci.org/Gravebot/Gravebot)
-[![Coverage Status](https://img.shields.io/coveralls/Gravebot/Gravebot/master.svg)](https://coveralls.io/github/Gravebot/Gravebot?branch=master)
-<a href="https://zenhub.io"><img src="https://img.shields.io/badge/KanBan%20Board-Zenhub.io-blue.svg"></a>
-[![Translations](https://img.shields.io/badge/Translations-Transifex-135d91.svg)](https://www.transifex.com/gravebot/gravebot/)
-[![Discord](https://discordapp.com/api/guilds/128598463947472897/widget.png?style=banner)](https://discord.gg/0iXEgtjdHgkpdsVr)
 ## About
 
-A fantastic, helpful, and fun [Discord](https://discordapp.com/) chat bot! Gravebot comes with a bunch of cool and powerful commands for both Discord and games!
+A fork of the awesome [Gravebot](https://github.com/Gravebot/Gravebot)
+
+If you want something feature complete and supported by people who probably know more what they're doing, go there :)
 
 ## [Changelog](CHANGELOG.md)
 
 ## How to use
-#### Invitation
-The easiest way to set this bot up on your server is to invite it to your Discord server, It is currently hosted 24/7 and will always get the newest features first.
 
-In order to do that, just [click here](https://discordapp.com/oauth2/authorize?&client_id=170664340968570880&scope=bot&permissions=268561430) and choose a server. You need to have **Manage Server** permission on that server. You may remove some of the permissions if you wish, but be warned it may break current and upcoming features.
-
-If you want to give the bot a first try, you may do that in the [Gravebot's Lair](https://discord.gg/0iXEgtjdHgkpdsVr) Discord server.
-
-If you have any questions, feedback or want to request features, you may also do that by leaving a message in [Gravebot's Lair](https://discord.gg/0iXEgtjdHgkpdsVr), private messaging Gravestorm or Zalik, as well as opening an [issue on Github](https://github.com/Gravebot/Gravebot/issues/new).
+Currently, the only viable option is to self host. We're not currently providing instructions for this, however we haven't diverged that much from Pachi yet so if you're really brave and want this version, their instructions may work for ours too. Or not. 
 
 For self hosting, click [here](#localconfig).
 
@@ -58,11 +48,16 @@ For self hosting, click [here](#localconfig).
 - `!leet` *sentence* - 1337ifies the sentence
 - `!snoop` *sentence* - Snoopifies tha sentence
 - `!yoda` *sentence* - Yodaifies the sentence
+- `!no` - Returns a random "No" Image
+- `!yes` - Same thing, but for "Yes"
+- `!sad` - Yep, but for "Sad"
+- `!lego` - You won't get this one. It won't make sense to you
+- `!dontgo` - Returns a form of the "It's dangerous to go alone" meme image
 
 #### Useful:
 - `!ddg` *search terms* - Search the web, can also calculate and convert. Search other websites by appending its shortening (e.g. `!ddg !yt Hello`) See <https://duckduckgo.com/bang> for a list.
 - `!gif` *gif tags* - Gets a gif from Giphy or Popkey matching the given tags (Use `!giphy` or `!popkey` to search the specific sites)
-- `!join` - Shows a link that can be used to invite Gravebot to your server
+- `!join` - Shows a link that can be used to invite Pachi to your server
 - `!random` - Generate truly random numbers and strings
 - `!fraction` *amount* *decimal places* *replace(optional)* - Generate a number of random real numbers between 0 and 1 with set decimal places, write **replace** at the end to disable duplicates (e.g. `!fraction 1 5 replace`)
 - `!gaussian` *amount* *mean* *deviation* *significant digits* - Generate a number of random numbers from a Gaussian distribution (e.g. `!gaussian 1 50 10 5`)
@@ -78,12 +73,12 @@ For self hosting, click [here](#localconfig).
 #### Information:
 - `!avatar` *username* - Responds with your avatar, unless a username is specified
 - `!channelinfo` *channelname* - Gives information about this channel, unless a channelname is specified
-- `!ping` - Pong! Check Gravebot's pulse
+- `!ping` - Pong! Check Pachi's pulse
 - `!serverinfo` *servername* - Gives information about this server, unless a servername is specified
 - `!servers` - Lists how many servers, channels and users the bot is connected to
 - `!uptime` - Shows how long the bot has been online
 - `!userinfo` *username* - Gives information about this user, unless a username is specified
-- `!version` - Get information on the latest version of Gravebot
+- `!version` - Get information on the latest version of Pachi
 
 #### Games:
 
@@ -138,7 +133,7 @@ Rename `config.js.example` to `config.js` and fill in the required information. 
 
 ## Local Installation
 #### Windows:
-**Warning**: Windows may have issues, even if all steps are done, sadly, we are not able to find the right dependencies for it (mostly regarding League of Legends and Wolfram commands), if you are familiar with coding, you can try messing around, either finding the right dependencies, or disabling the commands. If you are not familiar with coding, I would advise you to try out Linux, just install it alongside Windows and give it like 20GB of space, it will be plenty, and you will have a good experience. Feel free to ask for help regarding installation in Gravebot's Lair, just keep this in mind.
+**Warning**: Windows may have issues, even if all steps are done, sadly, we are not able to find the right dependencies for it (mostly regarding League of Legends and Wolfram commands), if you are familiar with coding, you can try messing around, either finding the right dependencies, or disabling the commands. If you are not familiar with coding, I would advise you to try out Linux, just install it alongside Windows and give it like 20GB of space, it will be plenty, and you will have a good experience. Feel free to ask for help regarding installation in Pachi's Lair, just keep this in mind.
 
 - Install [node.js](https://nodejs.org/en/) v4.0 or higher
 - Install [python v2.7.3](https://www.python.org) ([32 bit](https://www.python.org/ftp/python/2.7.3/python-2.7.3.msi), [64 bit](https://www.python.org/ftp/python/2.7.3/python-2.7.3.amd64.msi))
@@ -158,37 +153,14 @@ Rename `config.js.example` to `config.js` and fill in the required information. 
 - [cd](https://en.wikipedia.org/wiki/Cd_%28command%29) to the root directory and run `npm install`
 - Run `npm start`
 
-## Deployment
-#### Heroku
-
-Gravebot comes setup and ready for Heroku.
-
-1. Setup your configuration in Heroku's environment variables.
-2. Activate multi buildpack. `heroku buildpacks:set https://github.com/ddollar/heroku-buildpack-multi.git`
-3. Push the source code.
-
-#### Docker
-
-Master branch is built and pushed to our Docker image. You can pull the latest from [here](https://hub.docker.com/r/gravebot/gravebot/).
-
-
 ## Updating
 
-Updating Gravebot is like any other NodeJS app. Just run `git pull && npm install`.
+Updating Pachi is like any other NodeJS app. Just run `git pull && npm install`.
 
 ---
 
 ## Feature Requests
 
-Have a feature in mind? We'd love to hear about it. Feel free to [open an issue](https://github.com/Gravebot/Gravebot/issues/new) and let us know.
-
-## Contribute
-
-Want to contribute to Gravebot? That's great! Be sure to check out the [CONTRIBUTE.md](CONTRIBUTE.md) doc for more information on how.
-
-## Contributors
-
-- Gravestorm  *(Maintainer)* - [@Gravestorm](https://github.com/Gravestorm)
-- Dustin Blackman *(Maintainer)* - [@dustinblackman](https://github.com/dustinblackman)
+Have a feature in mind? We'd love to hear about it. Feel free to [open an issue](https://github.com/Pachi/Pachi/issues/new) and let us know.
 
 ## [License](LICENSE)
