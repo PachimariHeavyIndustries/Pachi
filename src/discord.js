@@ -89,11 +89,6 @@ function callCmd(cmd, name, client, evt, suffix) {
 function onMessage(evt) {
   if (!evt.message) return;
   if (client.User.id === evt.message.author.id) return;
-  // if (evt.message.content == "F"){
-    //evt.message.channel.sendMessage(`Paying respect! :eggplant:`
-  //  evt.message.channel.sendMessage(upload: 'https://i.imgur.com/9bC1UNC.jpg');
-  //  return;
-  //}
 
   // Checks for PREFIX
   if (evt.message.content[0] === nconf.get('PREFIX')) {
@@ -110,12 +105,18 @@ function onMessage(evt) {
     const msg_split = evt.message.content.split(' ');
 
     // If bot was mentioned without a command, then skip.
-    if (!msg_split[1]) return;
+    //if (!msg_split[1]) return;
 
     const suffix = R.join(' ', R.slice(2, msg_split.length, msg_split));
     let cmd_name = msg_split[1].toLowerCase();
     if (cmd_name[0] === nconf.get('PREFIX')) cmd_name = cmd_name.slice(1);
     const cmd = commands[cmd_name];
+
+    // If bot was mentioned without a command, make chat the default command
+    if (!msg_split[1]){
+      if (cmd) callCmd(cmd, chat, client, evt, suffix);
+      return;
+    }
 
     if (cmd) callCmd(cmd, cmd_name, client, evt, suffix);
     return;
