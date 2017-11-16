@@ -104,16 +104,16 @@ function onMessage(evt) {
   if (client.User.isMentioned(evt.message)) {
     const msg_split = evt.message.content.split(' ');
 
-    // If bot was mentioned without a command, then skip.
-    //if (!msg_split[1]) return;
+    // If bot was mentioned without a command (just @pancake/@pachi), then skip.
+    if (!msg_split[1]) return;
 
     const suffix = R.join(' ', R.slice(2, msg_split.length, msg_split));
     let cmd_name = msg_split[1].toLowerCase();
     if (cmd_name[0] === nconf.get('PREFIX')) cmd_name = cmd_name.slice(1);
     const cmd = commands[cmd_name];
 
-    // If bot was mentioned without a command, make chat the default command
-    if (!msg_split[1]){
+    // If the first word doesn't match a command, make the command chat...
+    if (cmd.indexOf(cmd_name) == 0){
       if (cmd) callCmd(cmd, chat, client, evt, suffix);
       return;
     }
