@@ -92,9 +92,9 @@ function onMessage(evt) {
 
   // KEVIN SPACEY MEME
   if (evt.message.content.indexOf("Kevin Spacey") >= 0 || evt.message.content.indexOf("kevin spacey") >= 0){
-    evt.message.channel.send("SSHHHHH! He's watching!!! :scream:", {
-        file: "https://i.imgur.com/K6ZCku8.jpg" //kevin spacey
-    });
+    evt.message.channel.sendMessage("SSHHHHH! He's watching!!! :scream:");
+    evt.message.channel.uploadFile('./images/kevinspacey.png');
+    return;
   }
 
   // Checks for PREFIX
