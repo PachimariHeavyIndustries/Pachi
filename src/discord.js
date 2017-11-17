@@ -90,6 +90,13 @@ function onMessage(evt) {
   if (!evt.message) return;
   if (client.User.id === evt.message.author.id) return;
 
+  // KEVIN SPACEY MEME
+  if (evt.message.content.indexOf("Kevin Spacey") >= 0 || evt.message.content.indexOf("kevin spacey") >= 0){
+    message.channel.send("SSHHHHH! He's watching!!! :scream:", {
+        file: "https://i.imgur.com/K6ZCku8.jpg" //kevin spacey
+    });
+  }
+
   // Checks for PREFIX
   if (evt.message.content[0] === nconf.get('PREFIX')) {
     const command = evt.message.content.toLowerCase().split(' ')[0].substring(1);
@@ -104,19 +111,13 @@ function onMessage(evt) {
   if (client.User.isMentioned(evt.message)) {
     const msg_split = evt.message.content.split(' ');
 
-    // If bot was mentioned without a command (just @pancake/@pachi), then skip.
+    // If bot was mentioned without a command, then skip.
     if (!msg_split[1]) return;
 
     const suffix = R.join(' ', R.slice(2, msg_split.length, msg_split));
     let cmd_name = msg_split[1].toLowerCase();
     if (cmd_name[0] === nconf.get('PREFIX')) cmd_name = cmd_name.slice(1);
     const cmd = commands[cmd_name];
-
-    // If the first word doesn't match a command, make the command chat...
-    if (cmd.indexOf(cmd_name) == 0){
-      if (cmd) callCmd(cmd, chat, client, evt, suffix);
-      return;
-    }
 
     if (cmd) callCmd(cmd, cmd_name, client, evt, suffix);
     return;
